@@ -43,11 +43,11 @@ public class MainController {
     }
 
     @PostMapping("/signup")
-    ResponseEntity<?> signup(@RequestBody SignupRequest signupRequest){
-        if (userRepo.existsByUsername(signupRequest.getUsername())){
+    ResponseEntity<?> signup(@RequestBody SignupRequest signupRequest) {
+        if (userRepo.existsByUsername(signupRequest.getUsername())) {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Username already exists");
         }
-        if (userRepo.existsByEmail(signupRequest.getEmail())){
+        if (userRepo.existsByEmail(signupRequest.getEmail())) {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Email already exists");
         }
 
