@@ -37,7 +37,7 @@ public class TokenFilter extends OncePerRequestFilter {
             }
             if(jwt != null){
                 try{
-                    username = jwtCore.getUsernameFromJwt(jwt);
+                    username = jwtCore.getUserNameFromJwt(jwt);
 
                 } catch (ExpiredJwtException e){
 
